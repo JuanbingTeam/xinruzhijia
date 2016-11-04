@@ -13,6 +13,7 @@
     background-image: url(../images/start.jpg);
     background-size: cover;
     z-index: 200;
+    background-color: #050b1b;
 }
 .loading-container {
     position: absolute;

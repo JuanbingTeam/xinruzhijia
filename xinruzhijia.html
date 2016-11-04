@@ -85,6 +85,9 @@
                 if (startNum > 100) {
                     startNum = 100;
                 }
+                if (!hasLoaded && startNum >= 100) {
+                    startNum = 97;
+                }
                 process.innerHTML = startNum + '%';
                 if (hasLoaded && startNum >= 100) {
                     clearInterval(intervalId);
