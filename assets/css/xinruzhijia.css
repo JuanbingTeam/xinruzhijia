@@ -306,8 +306,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(1rem,5.5rem,0) rotateZ(10deg);
-        transform: translate3d(1rem,5.5rem,0) rotateZ(10deg);
+        -webkit-transform: translate3d(-0.5rem,5.5rem,0) rotateZ(-5deg);
+        transform: translate3d(-0.5rem,5.5rem,0) rotateZ(-5deg);
         opacity: 1;
     }
 }
@@ -318,8 +318,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(1rem,5.5rem,0) rotateZ(10deg);
-        transform: translate3d(1rem,5.5rem,0) rotateZ(10deg);
+        -webkit-transform: translate3d(-0.5rem,5.5rem,0) rotateZ(-5deg);
+        transform: translate3d(-0.5rem,5.5rem,0) rotateZ(-5deg);
         opacity: 1;
     }
 }
@@ -337,8 +337,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(1rem,6.5rem,0) rotateZ(15deg);
-        transform: translate3d(1rem,6.5rem,0) rotateZ(15deg);
+        -webkit-transform: translate3d(-0.5rem,6.5rem,0) rotateZ(15deg);
+        transform: translate3d(-0.5rem,6.5rem,0) rotateZ(15deg);
         opacity: 1;
     }
 }
@@ -349,8 +349,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(1rem,6.5rem,0) rotateZ(5deg);
-        transform: translate3d(1rem,6.5rem,0) rotateZ(5deg);
+        -webkit-transform: translate3d(-0.5rem,6.5rem,0) rotateZ(5deg);
+        transform: translate3d(-0.5rem,6.5rem,0) rotateZ(5deg);
         opacity: 1;
     }
 }
@@ -404,8 +404,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(-1rem,5rem,0) rotateZ(-10deg);
-        transform: translate3d(-1rem,5rem,0) rotateZ(-10deg);
+        -webkit-transform: translate3d(-0.1rem,5rem,0) rotateZ(-10deg);
+        transform: translate3d(-0.1rem,5rem,0) rotateZ(-10deg);
         opacity: 0.8;
     }
 }
@@ -416,8 +416,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(-1rem,5rem,0) rotateZ(-10deg);
-        transform: translate3d(-1rem,5rem,0) rotateZ(-10deg);
+        -webkit-transform: translate3d(-0.1rem,5rem,0) rotateZ(-10deg);
+        transform: translate3d(-0.1rem,5rem,0) rotateZ(-10deg);
         opacity: 0.8;
     }
 }
@@ -433,8 +433,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(-0.2rem,5.5rem,0) rotateZ(0deg);
-        transform: translate3d(-0.2rem,5.5rem,0) rotateZ(0deg);
+        -webkit-transform: translate3d(0.2rem,5.5rem,0) rotateZ(0deg);
+        transform: translate3d(0.2rem,5.5rem,0) rotateZ(0deg);
         opacity: 0.8;
     }
 }
@@ -445,8 +445,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(-0.2rem,5.5rem,0) rotateZ(0deg);
-        transform: translate3d(-0.2rem,5.5rem,0) rotateZ(0deg);
+        -webkit-transform: translate3d(0.2rem,5.5rem,0) rotateZ(0deg);
+        transform: translate3d(0.2rem,5.5rem,0) rotateZ(0deg);
         opacity: 0.8;
     }
 }
@@ -462,8 +462,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(-1rem,6.5rem,0) rotateZ(0);
-        transform: translate3d(-1rem,6.5rem,0) rotateZ(0);
+        -webkit-transform: translate3d(-0.3rem,6.5rem,0) rotateZ(0);
+        transform: translate3d(-0.3rem,6.5rem,0) rotateZ(0);
         opacity: 0.8;
     }
 }
@@ -474,8 +474,8 @@
         opacity: 1;
     }
     100% {
-        -webkit-transform: translate3d(-1rem,6.5rem,0) rotateZ(0);
-        transform: translate3d(-1rem,6.5rem,0) rotateZ(0);
+        -webkit-transform: translate3d(-0.3rem,6.5rem,0) rotateZ(0);
+        transform: translate3d(-0.3rem,6.5rem,0) rotateZ(0);
         opacity: 0.8;
     }
 }
@@ -988,6 +988,12 @@
     color: rgba(255,255,255,0.8);
 }
 
+.doorTip {
+    opacity: 0;
+    color: #fff;
+    top: 11rem;
+}
+
 .fog-hide {
     -webkit-transition: all 1s;
     transition: all 1s;
@@ -998,4 +1004,32 @@
     -webkit-transition: all 1s;
     transition: all 1s;
     opacity: 1;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-top: 2rem;
+    text-align: center;
+    z-index: 1000;    
+    background-color: rgba(9,23,124,0.3)
+}
+
+.qr-img {
+    display: block;
+    margin: 0.5rem auto;
+    width: 2.8rem;
+    height: 2.68rem;
+}
+
+.popup-content {
+    line-height: 0.6rem;
+    font: 0.4rem;
+    color: #fff;
 }

@@ -4,12 +4,19 @@
         this.page2 = $('.page2');
         this.fogCanvas = $('#fogCanvas');
         this.skyContainer = $('.sky-container');
+        this.popup = $('#popup');
         this.skyScale = 1;
         this.skyImgWith = 2516;
-        this.skyImgHeight = 1033;
+        this.skyImgHeight = 1033;        
     };
 
     activity.prototype.init = function () {
+        if (commonObj.browser.ua.indexOf('mobile') < 0) {
+            $('body').css({
+                maxWidth: '640px',
+                margin: '0 auto'                
+            });
+        }
         var self = this;
         this.initFog();
         this.bindEvents();
@@ -39,6 +46,7 @@
             $('.branchTip').removeClass('fog-show').addClass('fog-hide');
             setTimeout(function () {
                 $('.door').css('zIndex', 3);
+                $('.doorTip').addClass('fog-show');
             }, 800);
             //$('.right-branch').addClass('slideOutRight');
         });
@@ -48,6 +56,7 @@
             $('.right-door').addClass('right-door-open');
             self.page1.addClass('page1-open');
             $('.light').addClass('light-show');
+            $('.doorTip').removeClass('fog-show').addClass('fog-hide');
             self.page2.show();
             setTimeout(function () {
                 self.showPage2();
@@ -62,7 +71,13 @@
             self.fogCanvas.hide();
             $('#fogTip').hide();
             $('.branchTip').addClass('fog-show');
-        });        
+        });
+
+        self.popup.on('click', function (e) {
+            if (e.target && e.target.className !== 'qr-img') {
+                self.hidePopup();
+            }
+        });
     };
 
     activity.prototype.initFog = function () {
@@ -78,7 +93,7 @@
         cxt.fillRect(0, 0, width, height);
         cxt.closePath();
         //cxt.strokeStyle = "rgba(255,255,255,0.1)";
-        cxt.lineWidth = 20;//线的宽度
+        cxt.lineWidth = 25;//线的宽度
         cxt.lineCap = 'round';//线的两头样式为圆
         cxt.lineJoin = 'round';//线的拐角样式为圆
         cxt.globalCompositeOperation = 'destination-out';//变透明
@@ -252,7 +267,7 @@
     };
 
     activity.prototype.initThree = function () {
-        var container, objects, mouse, camera, scene, renderer, controls, geometry, mesh;
+        var self = this, container, objects, mouse, camera, scene, renderer, controls, geometry, mesh;
         var hasInit = false;
         var animate = function(){
 
@@ -405,11 +420,30 @@
             var intersects = raycaster.intersectObjects(objects, true);
             //alert(JSON.stringify(intersects));
             if (intersects.length > 0) {
-                alert('待添加扫码加公众号');
+                //alert('待添加扫码加公众号');
+                self.showPopup();
             }
         }, false);
 
         animate();
+    };
+
+    activity.prototype.hidePopup = function () {
+        var self = this;
+        self.popup.removeClass('fog-show').addClass('fog-hide');
+        setTimeout(function () {
+            self.popup.hide();
+        }, 1000);
+    };
+
+    activity.prototype.showPopup = function () {
+        var self = this;
+        setTimeout(function () {
+            self.popup.show();
+            setTimeout(function () {
+                self.popup.removeClass('fog-hide').addClass('fog-show');
+            });
+        }, 300);        
     };
 
     //new activity().init();

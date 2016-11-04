@@ -4,18 +4,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content="telephone=no,email=no" name="format-detection" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel='dns-prefetch' href='http//comp.changba.com' />
-    <link href="http://cdn-comp.changbaimg.com/css/mobile_common.min.css" rel="stylesheet" />
+    <link href="assets/css/mobile_common.min.css" rel="stylesheet" />
     <script>window.devicePixelRatio = 1;</script>
-    <script src="http://cdn-comp.changbaimg.com/js/flexible.min.js"></script>
+    <script src="assets/js/flexible.min.js"></script>
     <meta name="apple-mobile-web-app-title" content="新汝之家" />
     <meta name="Keywords" content="新汝之家" />
     <meta name="description" content="想知道每朵蓝玫瑰背后的秘密吗？请关注新汝之家微信平台" />
+    <link rel="subresource" href="assets/images/start.jpg" />
+    <link rel="subresource" href="assets/images/loading.png" />
     <link rel="stylesheet" href="assets/css/xinruzhijia.css" />
     <title>蓝玫瑰背后的秘密-答案就在新汝之家</title>
 </head>
 <body>
     <div class="start">
+        <img src="assets/images/start.jpg" style="position: absolute; width: 100%; height: 100%;" />
         <div class="loading-container">
             <img src="assets/images/loading.png" class="loading" id="loadingImg" alt="" />
             <p id="process">3%</p>
@@ -43,6 +45,7 @@
             <div class="left-door"></div>
             <div class="right-door"></div>
         </div>
+        <div class="tip doorTip"><span class="tip-msg">推开大门，遇见奇迹</span><span class="tip-circle animated infinite tiping"></span></div>
         <img src="assets/images/light.png" class="light animated" alt="" />
     </div>
     <div class="page page2">
@@ -69,6 +72,11 @@
         <img src="assets/images/rose7.png" />
         <img src="assets/images/rose8.png" />
     </div>
+    <div id="popup">
+        <p class="popup-content">想知道每朵蓝玫瑰背后的故事吗？<br />关注“新汝之家”微信平台，12月为您揭晓答案<br />2016让我们遇见奇迹</p>
+        <img src="assets/images/qr.jpg" class="qr-img" alt="" />
+        <p class="popup-content">长按二维码识别关注</p>
+</div>
     <script>
         (function () {
             var loadingImg = document.getElementById('loadingImg'), hasLoaded = false, startNum = 3, process = document.getElementById('process');
@@ -83,7 +91,7 @@
                     document.getElementsByClassName('start')[0].classList.add('fog-hide');
                     setTimeout(function () {
                         document.getElementsByClassName('start')[0].style.display = 'none';
-                    }, 2000);
+                    }, 1000);
                 }
             }, 500);
             window.onload = function () {
@@ -96,7 +104,7 @@
                 document.getElementsByClassName('start')[0].classList.add('fog-hide');
                 setTimeout(function () {
                     document.getElementsByClassName('start')[0].style.display = 'none';
-                }, 2000);
+                }, 1000);
             };
         })();
     </script>
