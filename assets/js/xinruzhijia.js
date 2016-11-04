@@ -443,7 +443,7 @@
             setTimeout(function () {
                 self.popup.removeClass('fog-hide').addClass('fog-show');
             });
-        }, 300);        
+        }, 500);        
     };
 
     //new activity().init();
