@@ -94,6 +94,7 @@ THREE.DeviceOrientationControls = function( object ) {
 		if (beta >= 1.8) {
 		    beta = 1.8;
 		}
+		$('#test').html(parseInt(alpha) + ' ' + parseInt(beta) + ' ' + parseInt(gamma));
 		setObjectQuaternion( scope.object.quaternion, alpha, beta, gamma, orient );
 		this.alpha = alpha;
 
